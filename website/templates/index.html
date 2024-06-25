@@ -21,7 +21,7 @@
            
         </form>
 
-        <hr>
+        
         {% if message %}
         <p>{{message}}</p>
         {% endif %}
@@ -33,8 +33,9 @@
         <p>Task Complete <input type="checkbox" id="toggle-checkbox" class="togglecheckbox">
             <label for="toggle-checkbox" class="toggle-label"></label>
         <a href="/update/{{todo.id}}">Mark as incomplete?</a></p>
-        {% endif %}
-        {% if todo.title==new_title %} 
+        {% endif %} 
+        <details>
+            <summary>Click to Edit</summary>
         <form action="/edit/{{todo.id}}" method="post">
             <div>
                 <label>Todo task</label>
@@ -44,9 +45,9 @@
             
         </form>
         <p>Edit. <a href="/edit/{{todo.id}}">Edit if needed</a></p>
-        {% else %}
+   
         <p>No changes made</p>
-        {% endif %}
+     </details>
         <a href="/delete/{{todo.id}}">Delete this task?</a>
         {% endfor %}
         
@@ -54,3 +55,10 @@
 </body>
 
 </html>
+
+<!--line 15-22: form to add a new to do item-->
+<!--line 25-29: Display the message i created if there is any-->
+<!--line 28: crated a for loop to loop through the todo_list which will in turn display all the to do items-->
+<!--line 30-36: created a condition display based on the todo.complete status by using a for loop. then created a checkbox to check once the task is complete and a task incomplete option if a user accidently clicked task complete.-->
+<!--line 37-49: i created a edit function so that if the user mistyped a word they could click edit an it will alow them to edit the existing item-->
+<!--line 51: crfeated a link so that the user was able to delete the item -->

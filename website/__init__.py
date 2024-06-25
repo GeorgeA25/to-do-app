@@ -33,3 +33,16 @@ def create_app():
 #!line 13: i'e imported my_view variable from .views
 
 #*line 14: then used the app variable wit .register_blueprint(my_view) which defines a my blueprint which is in a seperate file and registers it into app.py
+
+#!line 16: i've imported ToDo from the moduels package.
+
+#~line 17: i've used with app.app_context to create the appliaction context for the Flask App.
+
+#*line 18: i used db.create_all() function which will create all the database tables I have made and defined.
+
+#todoline 19: I then added return app which will return to the flask app instance.
+
+#!for imports
+#*for variables
+#~ for the def and the with
+#todo for the return statement
