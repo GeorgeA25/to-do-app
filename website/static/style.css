@@ -1,0 +1,45 @@
+body{
+    background-image:url(/static/cakebg.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    text-align: left;
+    color:rgb(25, 0, 255);
+    
+    
+}
+
+p{
+    color: rgb(244, 27, 67);
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+button{
+    background-color: crimson;
+}
+
+label{
+    background-color: orange;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+h1{
+
+        color: rgb(6, 249, 249);}
+
+      #todo_list{	
+        animation-name:blink;
+        width:280px;
+        animation-duration:1s;
+        animation-timing-function:linear;
+        animation-iteration-count:Infinite;
+        }
+      
+      @keyframes blink{
+        0%{color:aqua;}
+        50%{color:rgb(7, 0, 0);}
+        100%{color:aqua;}
+}
+

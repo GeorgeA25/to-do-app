@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="todo_list">To Do List</h1>
+
+        <form action="/add" method="post">
+            <div>
+                <label>Todo task</label>
+                <input type="text" name="task" placeholder="Enter a Task">
+                <button type="submit">Add a Task</button>
+            </div>
+           
+        </form>
+
+        <hr>
+        {% if message %}
+        <p>{{message}}</p>
+        {% endif %}
+        {% for todo in todo_list %}
+                <p>{{todo.id}} : {{todo.task}} : {{todo.date.strftime('%Y-%m-%d')}} </p>
+        {% if todo.complete==False %}
+        <p>Task Incomplete. <a href="/update/{{todo.id}}">Mark as complete?</a></p>
+        {% else %}
+        <p>Task Complete <input type="checkbox" id="toggle-checkbox" class="togglecheckbox">
+            <label for="toggle-checkbox" class="toggle-label"></label>
+        <a href="/update/{{todo.id}}">Mark as incomplete?</a></p>
+        {% endif %}
+        {% if todo.title==new_title %} 
+        <form action="/edit/{{todo.id}}" method="post">
+            <div>
+                <label>Todo task</label>
+                <input type="text" name="edit_task" placeholder="Enter a Task">
+                <button type="submit">Add a Task</button>
+            </div>
+           
+        </form>
+        <p>Edit. <a href="/edit/{{todo.id}}">Edit if needed</a></p>
+        {% else %}
+        <p>No changes made</p>
+        {% endif %}
+        <a href="/delete/{{todo.id}}">Delete this task?</a>
+        {% endfor %}
+        
+    </div>
+</body>
+
+</html>
