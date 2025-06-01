@@ -1,4 +1,5 @@
-CONTACT BOOK 
+TO-DO APP
 
-Contact Book is a simple command-line Python application that allows users to store, manage, and retrieve contact information such as names and phone numbers. 
-It's designed as a learning project to demonstrate basic Python programming concepts I did on a coding bootcamp.
+This To-Do App is a simple Python command-line project built during a coding bootcamp. 
+It allows users to add, view, and complete tasks, with all data stored persistently in a database. 
+The project demonstrates fundamental Python skills along with basic database operations.
